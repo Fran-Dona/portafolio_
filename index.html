@@ -230,7 +230,7 @@
 
         <h3>Dashboard 1: Análisis de Ventas</h3>
         <p>📌 <em>Breve descripción sobre qué representa este dashboard y su utilidad.</em></p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjA5N2ZhNzItNWQwNy00YTc5LTgzNjQtM2IyNTFkMmEzZTFjIiwidCI6IjUyNDEwN2M5LTQ5YTYtNDQyOC1hODRhLWQ0Yjg4M2FhYmVjZCIsImMiOjR9" allowFullScreen="true"></iframe>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjA5N2ZhNzItNWQwNy00YTc5LTgzNjQtM2IyNTFkMmEzZTFjIiwidCI6IjUyNDEwN2M5LTQ5YTYtNDQyOC1hODRhLWQ0Yjg8M2FhYmVjZCIsImMiOjR9" allowFullScreen="true"></iframe>
 
         <h3>Dashboard 2: Análisis de Clientes</h3>
         <p>📌 <em>Breve descripción sobre qué representa este segundo dashboard.</em></p>
@@ -327,4 +327,34 @@
                 section.style.display = 'none';
             });
             // Muestra la sección seleccionada
-            document.getElementById(sectionId).
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Función para abrir el modal de imágenes
+        function openModal(imgElement) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Cierra el modal al hacer clic fuera de la imagen
+        document.getElementById("imageModal").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        // Mostrar la sección "Sobre mí" por defecto al cargar la página
+        window.onload = function() {
+            showSection('about');
+        };
+    </script>
+
+</body>
+</html>
