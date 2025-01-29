@@ -131,6 +131,20 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            margin: 10px 0;
+        }
+        .file-list a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .file-list a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .image-gallery img {
                 width: 100%;
@@ -160,6 +174,10 @@
                 <img src="https://img.icons8.com/ios-filled/50/000000/layers.png" alt="ArcGIS">
                 ArcGIS Online
             </button>
+            <button onclick="showSection('projects')">
+                <img src="https://img.icons8.com/ios-filled/50/000000/folder-invoices.png" alt="Proyectos">
+                Proyectos Integrales
+            </button>
             <button onclick="window.open('ruta/a/tu_cv.pdf', '_blank')">
                 <img src="https://img.icons8.com/ios-filled/50/000000/pdf.png" alt="CV">
                 Descargar CV
@@ -171,9 +189,24 @@
     <section id="about">
         <h2>Sobre mí</h2>
         <p>
-            ¡Hola! Soy Donadio Francisco, un apasionado analista de datos con experiencia en la creación de dashboards interactivos 
-            en Power BI y aplicaciones geoespaciales en ArcGIS Online. Me especializo en transformar datos en insights accionables 
-            para la toma de decisiones estratégicas. Aquí podrás explorar algunos de mis trabajos más recientes.
+            ¡Hola! Soy <strong>Francisco Donadio</strong>, estudiante de Geología en proceso de realizar mi tesis de grado. 
+            Mi interés por el análisis, visualización y ciencia de datos comenzó al descubrir las potencialidades de 
+            <strong>ArcGIS Online</strong>, una herramienta que me permitió explorar el mundo de los datos geoespaciales y su aplicación 
+            en proyectos multidisciplinarios. Las capacidades de ArcGIS Online para integrar, analizar y visualizar datos 
+            espaciales me abrieron las puertas a un universo de posibilidades, desde la gestión territorial hasta la toma 
+            de decisiones basada en datos.
+        </p>
+        <p>
+            Desde hace <strong>3 años</strong>, trabajo en el sector público, más precisamente en la <strong>Municipalidad de Córdoba</strong>, 
+            donde he participado en diversos proyectos relacionados con la gestión de datos y el análisis espacial. 
+            Además, he colaborado en proyectos privados, aplicando mis conocimientos en geología y análisis de datos 
+            para resolver problemas complejos.
+        </p>
+        <p>
+            Mis intereses profesionales se centran en el <strong>medio ambiente</strong>, la <strong>energía</strong>, la <strong>transición energética</strong> y los proyectos 
+            relacionados con el desarrollo sostenible. Creo firmemente en el poder de los datos para impulsar cambios 
+            positivos en estos ámbitos, y me esfuerzo por combinar mi formación en geología con herramientas modernas 
+            de análisis y visualización de datos.
         </p>
     </section>
 
@@ -246,6 +279,21 @@
         </div>
     </section>
 
+    <!-- Sección de Proyectos Integrales -->
+    <section id="projects">
+        <h2>Proyectos Integrales</h2>
+        <p>
+            En esta sección podrás encontrar algunos de los proyectos en los que he trabajado, tanto en el ámbito público 
+            como en el privado. Estos archivos incluyen informes, presentaciones y otros materiales relacionados con mis 
+            trabajos más relevantes.
+        </p>
+        <ul class="file-list">
+            <li><a href="ruta/a/proyecto1.pdf" target="_blank">Proyecto 1: Informe de Análisis Geoespacial</a></li>
+            <li><a href="ruta/a/proyecto2.pdf" target="_blank">Proyecto 2: Presentación sobre Transición Energética</a></li>
+            <li><a href="ruta/a/proyecto3.pdf" target="_blank">Proyecto 3: Dashboard de Gestión Municipal</a></li>
+        </ul>
+    </section>
+
     <!-- Sección del CV -->
     <section id="cv">
         <h2>Mi CV</h2>
@@ -267,8 +315,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>Contacto: <a href="mailto:tuemail@example.com">tuemail@example.com</a> | 
-           LinkedIn: <a href="https://www.linkedin.com/in/tuperfil" target="_blank">Donadio Francisco</a></p>
+        <p>Contacto: <a href="mailto:francisco.donadio@mi.unc.edu.ar">francisco.donadio@mi.unc.edu.ar</a> | 
+           LinkedIn: <a href="https://www.linkedin.com/in/francisco-donadio-16494a277/" target="_blank">Francisco Donadio</a></p>
     </footer>
 
     <script>
@@ -279,34 +327,4 @@
                 section.style.display = 'none';
             });
             // Muestra la sección seleccionada
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        // Función para abrir el modal de imágenes
-        function openModal(imgElement) {
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
-            modal.style.display = "flex";
-            modalImg.src = imgElement.src;
-        }
-
-        // Función para cerrar el modal
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-
-        // Cierra el modal al hacer clic fuera de la imagen
-        document.getElementById("imageModal").addEventListener("click", function(event) {
-            if (event.target === this) {
-                closeModal();
-            }
-        });
-
-        // Mostrar la sección "Sobre mí" por defecto al cargar la página
-        window.onload = function() {
-            showSection('about');
-        };
-    </script>
-
-</body>
-</html>
+            document.getElementById(sectionId).
