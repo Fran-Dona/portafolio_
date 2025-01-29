@@ -23,57 +23,15 @@
             margin: 20px 0;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: none;
+            display: none; /* Ocultar secciones por defecto */
         }
-        h2, h3 {
+        h2 {
             color: #333;
         }
         iframe {
             width: 100%;
             height: 500px;
             border: none;
-        }
-        .container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            background-color: #ddd;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .btn img {
-            width: 30px;
-            margin-right: 10px;
-        }
-        .btn-powerbi {
-            background: #f2c811;
-            color: black;
-        }
-        .btn-arcgis {
-            background: #4b8e4b;
-            color: white;
-            font-family: 'Arial', sans-serif;
-        }
-        .text-section {
-            padding: 15px;
-            background: #e0e0e0;
-            border-radius: 5px;
-            margin: 20px 0;
         }
         .image-gallery {
             display: flex;
@@ -92,6 +50,7 @@
         .image-gallery img:hover {
             transform: scale(1.05);
         }
+        
         /* Modal para imágenes */
         .modal {
             display: none;
@@ -118,6 +77,36 @@
             color: white;
             cursor: pointer;
         }
+
+        /* Estilos para los botones */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nav-buttons button:hover {
+            background-color: #777;
+            transform: scale(1.05);
+        }
+        .nav-buttons button img {
+            width: 24px;
+            height: 24px;
+            filter: grayscale(100%);
+        }
     </style>
 </head>
 <body>
@@ -125,65 +114,61 @@
     <header>
         <h1>Mi Portfolio Data Analyst</h1>
         <p>Explora mis trabajos en Power BI y ArcGIS Online</p>
+        <div class="nav-buttons">
+            <button onclick="showSection('powerbi')">
+                <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI Logo">
+                Power BI
+            </button>
+            <button onclick="showSection('arcgis')">
+                <img src="https://img.icons8.com/ios-filled/50/000000/layers.png" alt="ArcGIS Logo" style="filter: grayscale(100%) brightness(200%);">
+                ArcGIS Online
+            </button>
+        </div>
     </header>
-
-    <!-- Botones de navegación -->
-    <div class="container">
-        <a href="javascript:void(0);" class="btn btn-powerbi" onclick="showContent('powerbi')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI Logo"> Power BI
-        </a>
-        <a href="javascript:void(0);" class="btn btn-arcgis" onclick="showContent('arcgis')">
-            ArcGIS Online
-        </a>
-    </div>
 
     <!-- Sección de Power BI -->
     <section id="powerbi">
         <h2>Power BI</h2>
-        
-        <div class="text-section">
-            <p>📌 Aquí puedes agregar información sobre tu experiencia con Power BI, los tipos de análisis que realizas y cómo utilizas esta herramienta.</p>
-        </div>
+        <p>A continuación, se presentan algunos dashboards interactivos creados con Power BI.</p>
 
         <h3>Dashboard 1: Análisis de Ventas</h3>
+        <p>📌 <em>Breve descripción sobre qué representa este dashboard y su utilidad.</em></p>
         <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjA5N2ZhNzItNWQwNy00YTc5LTgzNjQtM2IyNTFkMmEzZTFjIiwidCI6IjUyNDEwN2M5LTQ5YTYtNDQyOC1hODRhLWQ0Yjg4M2FhYmVjZCIsImMiOjR9" allowFullScreen="true"></iframe>
 
         <h3>Dashboard 2: Análisis de Clientes</h3>
+        <p>📌 <em>Breve descripción sobre qué representa este segundo dashboard.</em></p>
         <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMDU4YTFkMDEtMmExYS00ZDk0LWE2MjctZGFjZjIxMGZkOTFjIiwidCI6IjU4NjkzNzRiLTkzOGYtNGM1ZS04MzZhLWFkYTg0NWRhZTY1OCJ9" allowFullScreen="true"></iframe>
-        
-        <div class="text-section">
-            <p>📌 Puedes describir cómo creaste estos dashboards y qué insights se pueden extraer de ellos.</p>
-        </div>
     </section>
 
     <!-- Sección de ArcGIS Online -->
     <section id="arcgis">
         <h2>ArcGIS Online</h2>
-
-        <div class="text-section">
-            <p>📌 Explica cómo usas ArcGIS Online, qué tipo de mapas creas y para qué sirven.</p>
-        </div>
+        <p>Aquí se presentan diferentes módulos y aplicaciones creadas con ArcGIS Online.</p>
 
         <h3>Dashboard de Inteligencia Territorial</h3>
         <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/bea3521d9ead42daa111dc31fddfea53" allowfullscreen></iframe>
+        <div class="image-gallery">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/PROMUBAP.jpeg?raw=true" alt="PROMUBAP" onclick="openModal(this)">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/APP%20PROMUBAP.jpeg?raw=true" alt="APP PROMUBAP" onclick="openModal(this)">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/MAP%20PROMUBAP.jpeg?raw=true" alt="MAP PROMUBAP" onclick="openModal(this)">
+        </div>
 
-        <h3>Dashboard 2: Mapa de Recursos Naturales</h3>
-        <iframe src="https://www.arcgis.com/apps/opsdashboard/index.html#/f7c0b743dbb945279dfbc42d5394db59" allowfullscreen></iframe>
+        <h3>Web App: Análisis de Datos Geoespaciales</h3>
+        <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/47c0788d7aca4b4f91e0db7cd2af2c12" allowfullscreen></iframe>
+        <div class="image-gallery">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_1.jpg" alt="Más agua, más salud" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_2.jpg" alt="Más agua, más salud (map)" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_3.jpg" alt="Más agua, más salud (zoom)" onclick="openModal(this)">
+        </div>
 
-        <h3>Dashboard 3: Análisis Urbano</h3>
-        <iframe src="https://www.arcgis.com/apps/opsdashboard/index.html#/3d842a564dfe4cd8ac768e2ed6b50043" allowfullscreen></iframe>
-        
-        <div class="text-section">
-            <p>📌 Detalla el propósito de estos dashboards y su utilidad.</p>
+         <h3>Web App: Análisis de Datos Geoespaciales</h3>
+        <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/fe9db44fdb684ee9b09260b18d781a37" allowfullscreen></iframe>
+        <div class="image-gallery">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_1.jpg" alt="Conexiones de agua potable (Barrio Yofre Sud)" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_2.jpg" alt="Conexiones de agua potable y desagüe (zoom)" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_3.jpg" alt="Conexiones de agua potable y desagüe" onclick="openModal(this)">
         </div>
     </section>
-
-    <!-- Galería de imágenes -->
-    <div class="image-gallery">
-        <img src="https://via.placeholder.com/300x200" alt="Imagen 1" onclick="openModal(this)">
-        <img src="https://via.placeholder.com/300x200" alt="Imagen 2" onclick="openModal(this)">
-        <img src="https://via.placeholder.com/300x200" alt="Imagen 3" onclick="openModal(this)">
-    </div>
 
     <!-- Modal para ampliar imágenes -->
     <div class="modal" id="imageModal">
@@ -192,17 +177,17 @@
     </div>
 
     <script>
-        function showContent(sectionId) {
-            // Ocultar todas las secciones
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
+        // Función para mostrar la sección seleccionada
+        function showSection(sectionId) {
+            // Oculta todas las secciones
+            document.querySelectorAll('section').forEach(section => {
                 section.style.display = 'none';
             });
-
-            // Mostrar la sección correspondiente
+            // Muestra la sección seleccionada
             document.getElementById(sectionId).style.display = 'block';
         }
 
+        // Función para abrir el modal de imágenes
         function openModal(imgElement) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("modalImage");
@@ -210,18 +195,23 @@
             modalImg.src = imgElement.src;
         }
 
+        // Función para cerrar el modal
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
         }
 
+        // Cierra el modal al hacer clic fuera de la imagen
         document.getElementById("imageModal").addEventListener("click", function(event) {
             if (event.target === this) {
                 closeModal();
             }
         });
+
+        // Mostrar la sección de Power BI por defecto al cargar la página
+        window.onload = function() {
+            showSection('powerbi');
+        };
     </script>
 
 </body>
 </html>
-
-
