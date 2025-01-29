@@ -42,6 +42,38 @@
             height: auto;
             border-radius: 5px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -52,52 +84,61 @@
         <p>Explora mis trabajos en Power BI y ArcGIS Online</p>
     </header>
 
-    <!-- Sección de Power BI -->
-    <section>
-        <h2>Power BI</h2>
-        <p>A continuación, se presentan algunos dashboards interactivos creados con Power BI.</p>
-
-        <h3>Dashboard 1: Análisis de Ventas</h3>
-        <p>📌 <em>Breve descripción sobre qué representa este dashboard y su utilidad.</em></p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjA5N2ZhNzItNWQwNy00YTc5LTgzNjQtM2IyNTFkMmEzZTFjIiwidCI6IjUyNDEwN2M5LTQ5YTYtNDQyOC1hODRhLWQ0Yjg4M2FhYmVjZCIsImMiOjR9" allowFullScreen="true"></iframe>
-
-        <h3>Dashboard 2: Análisis de Clientes</h3>
-        <p>📌 <em>Breve descripción sobre qué representa este segundo dashboard.</em></p>
-        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMDU4YTFkMDEtMmExYS00ZDk0LWE2MjctZGFjZjIxMGZkOTFjIiwidCI6IjU4NjkzNzRiLTkzOGYtNGM1ZS04MzZhLWFkYTg0NWRhZTY1OCJ9" allowFullScreen="true"></iframe>
-    </section>
-
     <!-- Sección de ArcGIS Online -->
     <section>
         <h2>ArcGIS Online</h2>
         <p>Aquí se presentan diferentes módulos y aplicaciones creadas con ArcGIS Online.</p>
 
         <h3>Dashboard de Inteligencia Territorial</h3>
-        <p>📌 <em>Explicación sobre qué muestra este dashboard y su utilidad.</em></p>
         <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/bea3521d9ead42daa111dc31fddfea53" allowfullscreen></iframe>
         <div class="image-gallery">
-            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/PROMUBAP.jpeg?raw=true" alt="PROMUBAP">
-            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/APP%20PROMUBAP.jpeg?raw=true" alt="APP PROMUBAP">
-            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/MAP%20PROMUBAP.jpeg?raw=true" alt="MAP PROMUBAP">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/PROMUBAP.jpeg?raw=true" alt="PROMUBAP" onclick="openModal(this)">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/APP%20PROMUBAP.jpeg?raw=true" alt="APP PROMUBAP" onclick="openModal(this)">
+            <img src="https://github.com/Fran-Dona/portafolio_/blob/main/MAP%20PROMUBAP.jpeg?raw=true" alt="MAP PROMUBAP" onclick="openModal(this)">
         </div>
 
         <h3>Web App: Análisis de Datos Geoespaciales</h3>
-        <p>📌 <em>Descripción de la web app y su función.</em></p>
         <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/47c0788d7aca4b4f91e0db7cd2af2c12" allowfullscreen></iframe>
         <div class="image-gallery">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_1.jpg" alt="Captura 1">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_2.jpg" alt="Captura 2">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_3.jpg" alt="Captura 3">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_1.jpg" alt="Captura 1" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_2.jpg" alt="Captura 2" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_3.jpg" alt="Captura 3" onclick="openModal(this)">
         </div>
 
         <h3>Otro Módulo de ArcGIS Online</h3>
-        <p>📌 <em>Aquí puedes agregar otra herramienta o aplicación relevante.</em></p>
         <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/fe9db44fdb684ee9b09260b18d781a37" allowfullscreen></iframe>
         <div class="image-gallery">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_1.jpg" alt="Captura 1">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_2.jpg" alt="Captura 2">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_3.jpg" alt="Captura 3">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_1.jpg" alt="Captura 1" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_2.jpg" alt="Captura 2" onclick="openModal(this)">
+            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_3.jpg" alt="Captura 3" onclick="openModal(this)">
         </div>
     </section>
+
+    <!-- Modal para ampliar imágenes -->
+    <div class="modal" id="imageModal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Cierra el modal al hacer clic fuera de la imagen
+        document.getElementById("imageModal").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
