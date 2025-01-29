@@ -36,6 +36,7 @@
             display: flex;
             justify-content: space-around;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
         .image-gallery img {
             width: 30%;
@@ -49,7 +50,7 @@
             transform: scale(1.05);
         }
         
-        /* Estilos para el modal */
+        /* Modal para imágenes */
         .modal {
             display: none;
             position: fixed;
@@ -84,6 +85,20 @@
         <p>Explora mis trabajos en Power BI y ArcGIS Online</p>
     </header>
 
+    <!-- Sección de Power BI -->
+    <section>
+        <h2>Power BI</h2>
+        <p>A continuación, se presentan algunos dashboards interactivos creados con Power BI.</p>
+
+        <h3>Dashboard 1: Análisis de Ventas</h3>
+        <p>📌 <em>Breve descripción sobre qué representa este dashboard y su utilidad.</em></p>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjA5N2ZhNzItNWQwNy00YTc5LTgzNjQtM2IyNTFkMmEzZTFjIiwidCI6IjUyNDEwN2M5LTQ5YTYtNDQyOC1hODRhLWQ0Yjg4M2FhYmVjZCIsImMiOjR9" allowFullScreen="true"></iframe>
+
+        <h3>Dashboard 2: Análisis de Clientes</h3>
+        <p>📌 <em>Breve descripción sobre qué representa este segundo dashboard.</em></p>
+        <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMDU4YTFkMDEtMmExYS00ZDk0LWE2MjctZGFjZjIxMGZkOTFjIiwidCI6IjU4NjkzNzRiLTkzOGYtNGM1ZS04MzZhLWFkYTg0NWRhZTY1OCJ9" allowFullScreen="true"></iframe>
+    </section>
+
     <!-- Sección de ArcGIS Online -->
     <section>
         <h2>ArcGIS Online</h2>
@@ -103,14 +118,6 @@
             <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_1.jpg" alt="Captura 1" onclick="openModal(this)">
             <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_2.jpg" alt="Captura 2" onclick="openModal(this)">
             <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/webapp_3.jpg" alt="Captura 3" onclick="openModal(this)">
-        </div>
-
-        <h3>Otro Módulo de ArcGIS Online</h3>
-        <iframe src="https://inteligenciaterritorial.cordoba.gob.ar/portal/apps/opsdashboard/index.html#/fe9db44fdb684ee9b09260b18d781a37" allowfullscreen></iframe>
-        <div class="image-gallery">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_1.jpg" alt="Captura 1" onclick="openModal(this)">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_2.jpg" alt="Captura 2" onclick="openModal(this)">
-            <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/images/modulo3_3.jpg" alt="Captura 3" onclick="openModal(this)">
         </div>
     </section>
 
